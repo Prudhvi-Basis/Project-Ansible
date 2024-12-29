@@ -1,24 +1,5 @@
-- name: Frontend Playbook
+- name: Roboshop App Playbook
   hosts: all
   become: yes
-  tasks:
-    - name: Disable Default Nginx
-      ansible.builtin.shell: dnf module disable nginx -y
-
-    - name: Enable Nginx 24 version
-      ansible.builtin.shell:  dnf module enable nginx:1.24 -y
-
-    - name: Install Nginx
-      ansible.builtin.dnf:
-        name: nginx
-        state: installed
-
-    - name: Copy nginx config file
-      ansible.builtin.template:
-        src: nginx.conf
-        dest: /etc/nginx/nginx.conf
-
-    - name: Start nginx
-      ansible.builtin.systemd_service:
-        name: nginx
-        state: started
+  roles:
+    - "{{ app_name }}" # the double quotes used here when role_name(app_name) is associated with vaariable
