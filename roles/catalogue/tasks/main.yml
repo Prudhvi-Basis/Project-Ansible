@@ -13,7 +13,7 @@
 
 - name: Install MonogoDB Client
   ansible.builtin.dnf:
-    name: mongodb-mogosh
+    name: mongodb-mongosh
     state: installed
 
 - name: load Master Data
