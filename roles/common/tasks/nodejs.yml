@@ -1,11 +1,11 @@
 - name: Disable Default NodeJS
-  ansible.builtin.shell: dnf module nodejs -y
+  ansible.builtin.shell: dnf module disable nodejs -y
 
 
 - name: Enable NodeJS 20
-  ansible.builtin.shell: dnf module nodejs:20 -y
+  ansible.builtin.shell: dnf module  enable nodejs:20 -y
 
-- name: Install nodeJS
+- name: Install NodeJS
   ansible.builtin.dnf:
     name: nodejs
     state: installed
