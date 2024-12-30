@@ -13,10 +13,10 @@
 
 - name: Load SQL File
   ansible.builtin.shell: mysql -h mysql-{{ env }}.rdevopsb81.online -uroot -p{{ lookup('hashi_vault', 'roboshop-{{env}}/data/shipping:mysql_root_password token={{ vault_token }} url=http://vault-internal.rdevopsb81.online:8200')}} < /app/db/{{ item }}.sql
-    loop:
-      - schema
-      - app-user
-      - master-data
+  loop:
+    - schema
+    - app-user
+    - master-data
 
 - name: restart shipping
   ansible.builtin.systemd_service:
