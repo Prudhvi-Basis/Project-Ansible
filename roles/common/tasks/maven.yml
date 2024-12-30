@@ -8,9 +8,9 @@
     file: app_pre-requisites.yml
 
 - name: Install maven Dependencies
-  ansible.builtin.shell: mvn clean package ; mv target/{{ app_name }}-1.0.jar {{ app_name }}.jar
-    args:
-      chdir: /app
+  ansible.builtin.shell: mvn clean package ; mv target/"{{ app_name }}"-1.0.jar "{{ app_name }}".jar
+  args:
+    chdir: /app
 
 - name: systemD setup
   ansible.builtin.include_tasks:
