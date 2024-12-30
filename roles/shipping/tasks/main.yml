@@ -1,5 +1,5 @@
-##- name: set prompt
-##  ansible.builtin.shell: set-prompt {{ app_name }}-{{ env }}
+- name: set prompt
+  ansible.builtin.shell: set-prompt {{ app_name }}-{{ env }}
 #
 #- name: Load Maven
 #  ansible.builtin.include_role:
@@ -35,9 +35,10 @@
 - name: Load SQL File
   ansible.builtin.shell: mysql -h mysql-{{ env }}.devops11.online -uroot -pRoboShop@1 < /app/db/{{ item }}.sql
   loop:
-  - schema
-  - app-user
-  - master-data
+    - schema
+    - app-user
+    - master-data
+
  ## The password hardcoded we will replace.
 
 - name: Restart Shipping
