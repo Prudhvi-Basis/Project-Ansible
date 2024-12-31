@@ -13,6 +13,7 @@
 
 - name: Install python Dependencies
   ansible.builtin.shell: pip3 install -r requirements.txt
+  args:
     chdir: /app
 
 - name: systemD setup
