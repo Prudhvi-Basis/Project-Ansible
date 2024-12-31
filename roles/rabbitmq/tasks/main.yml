@@ -18,7 +18,7 @@
   community.rabbitmq.rabbitmq_user:
     user: roboshop
     password: roboshop123
-    vhosts: /
+    vhost: /
     configure_priv: .*
     read_priv: .*
     write_priv: .*
