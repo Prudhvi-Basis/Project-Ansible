@@ -1,7 +1,7 @@
 - name: Copy the service file
   ansible.builtin.template:  # TEMPLATE IS USED HERE BECAUSE THE ENVIRONMENT VARIABLE GETS REPLACED.
     src: "{{ app_name }}.service"
-    dest: /etc/systemd/system/{{ app_name }}.service
+    dest: /etc/systemd/system/{{ component }}.service
 
 - name: Start service
   ansible.builtin.systemd_service:
