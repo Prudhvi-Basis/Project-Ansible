@@ -2,4 +2,4 @@
   hosts: all
   become: yes
   roles:
-    - {{ component }} # the double quotes used here when role_name() is associated with vaariable
+    - "{{ component }}" # the double quotes used here when role_name() is associated with vaariable
